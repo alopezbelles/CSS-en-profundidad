@@ -1,0 +1,20 @@
+
+
+.cursos{
+    width: 200px;
+    /* El pading añade margen por dentro  del tamaño del contenedor pero eso afecta a las distancias hacia afuera. Sería 200px + 50px por arriba y 50px por abajo. También hacia los lados: */
+    padding: 50px;
+    /* El box-sizing hace que estas modificaciones añadan estas nuevas dimensiones hacia adentro, no hacia afuera. Por default, el box-sizing es content-box.  */
+    box-sizing: border-box;
+}
+
+.block{
+    background-color: red;
+    width: 100px;
+    height: 50px;
+    /* Display block: cada elemento ocupará una fila o linea.  */
+    /* Display inline: cada elemento se colocará uno al lado del otro pero no puedes ponerle ni width ni height.  */
+    /* Display inline-block: cada elemento se colocará uno al lado del otro y sí que se puede añadir ancho y alto. */  
+    display: inline-block;
+  
+}
