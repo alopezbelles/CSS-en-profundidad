@@ -1,0 +1,119 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+}
+
+.grid-container>*{
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    min-height: 100%;
+    /* Template rows define el alto de las filas */
+    grid-template-rows: 100px 50px auto auto 50px;
+    /* Define el nombre de las areas. En este caso ocupan todo el acho disponible */
+    grid-template-areas: 
+        "header"
+        "navbar"
+        "article"
+        "aside"
+        "footer"
+}
+
+.header{
+    /* Definimos el mismo nombre que en el grid-template del elemento padre */
+    grid-area: header;
+    background-color: lightcoral;
+}
+
+.navbar{
+    grid-area: navbar;
+    background-color: lightblue;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: lightseagreen;
+}
+
+.article{
+    grid-area: article;
+    background-color: lightgray;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: lightsalmon;
+}
+
+.article{
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(15, 1fr) );
+}
+
+.article>*{
+    background-color: lightcyan;
+}
+
+.featured{
+    grid-column: span 2;
+}
+
+@media (min-width: 600px){
+    .grid-container{
+        /* Template columns define el ancho de las 2 columnas */
+        /* grid-template-columns: 200px auto; */
+        /* Template rows define el alto de las filas */
+        /* grid-template-rows: 100px 50px auto 50px; */
+        /* Define las áreas y como se distribuyen  */
+ 
+        /* ////////// */
+        /* grid-template-areas: 
+        "header header"
+        "navbar navbar"
+        "aside  article"
+        "footer footer" */
+        /* ////////// */
+
+        /* En este caso refactorizamos lo anterior. Usamos grid template para definir las areas, a continuación de cada area establecemos el alto. Bajo usando "/" añadimos el ancho de las dos columnas; */
+        grid-template: 
+        "header header" 100px
+        "navbar navbar" 50px
+        "aside  article" auto
+        "footer footer" 50px /
+        200px   auto;
+    }
+}
+
+@media (min-width: 900px){
+    .grid-container{
+        grid-template: 
+        "header header header" 100px
+        "navbar article aside" auto
+        "footer footer footer" 50px /
+        200px   auto 200px;
+    }
+
+}

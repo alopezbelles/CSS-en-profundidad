@@ -1,0 +1,21 @@
+
+.grid-services{
+    h1{
+        color: white;
+        background: none;
+        font-size: 3rem;
+        text-align: center;
+        text-shadow: 0 ppx 10px rgba(8,0,0,.2)
+
+    }
+}
+
+.container{
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px, 0%;
+    padding-bottom: 100px; 
+}
+
+.box{
+
+}

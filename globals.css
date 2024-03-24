@@ -5,11 +5,9 @@
     --border-radius: 20px;
 }
 
-body{
-    margin: 0;
-}
 
 /* Con estas dos declaraciones estoy diciendo que todo el contenido dentro del html incluido head tendrá un modelo de caja border-box. Con la segunda, que todos los elementos dentro del html tendrán el mismo modelo que el html. Esto facilita definir las medidas ya que si creo un elemento de 100x100px, el pading y el margin que le aplique no afectará a sus medidas.  */
+
 
 html{
     box-sizing: border-box;
